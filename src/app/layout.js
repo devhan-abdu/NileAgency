@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={` antialiased  bg-black`}
+        className={` antialiased  bg-[#1A1A2E] `}
       >
         <Header/>
         {children}
