@@ -38,3 +38,48 @@ export const services =[
       desc:"Launching scalable online stores with seamless development, payment integration, and optimized UX to thrive in the digital marketplace"
     }
   ]
+
+export const recentProject = [
+  {                                                         
+    id: 1,
+    name: "SaaS Dashboard UI",
+    desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
+    img: "/sass2.png",
+    icon: <Layout className="text-2xl font-bold text-primary-500" />,
+  },
+  {
+    id: 2,
+    name: "SaaS Dashboard UI",
+    desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
+    img: "/sass2.png",
+    icon: <Layout className="text-2xl font-bold text-primary-500" />,
+  },
+  {
+    id: 3,
+    name: "SaaS Dashboard UI",
+    desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
+    img: "/sass2.png",
+    icon: <Layout className="text-2xl font-bold text-primary-500" />,
+  },
+  {
+    id: 4,
+    name: "SaaS Dashboard UI",
+    desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
+    img: "/sass2.png",
+    icon: <Layout className="text-2xl font-bold text-primary-500" />,
+  },
+  {
+    id: 5,
+    name: "SaaS Dashboard UI",
+    desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
+    img: "/sass2.png",
+    icon: <Layout className="text-2xl font-bold text-primary-500" />,
+  },
+  {
+    id: 6,
+    name: "SaaS Dashboard UI",
+    desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
+    img: "/sass2.png",
+    icon: <Layout className="text-2xl font-bold text-primary-500" />,
+  },
+];
