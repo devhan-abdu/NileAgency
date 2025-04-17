@@ -68,18 +68,18 @@ export const recentProject = [
     img: "/sass2.png",
     icon: <Layout className="text-2xl font-bold text-primary-500" />,
   },
-  {
-    id: 5,
-    name: "SaaS Dashboard UI",
-    desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
-    img: "/sass2.png",
-    icon: <Layout className="text-2xl font-bold text-primary-500" />,
-  },
-  {
-    id: 6,
-    name: "SaaS Dashboard UI",
-    desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
-    img: "/sass2.png",
-    icon: <Layout className="text-2xl font-bold text-primary-500" />,
-  },
+  // {
+  //   id: 5,
+  //   name: "SaaS Dashboard UI",
+  //   desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
+  //   img: "/sass2.png",
+  //   icon: <Layout className="text-2xl font-bold text-primary-500" />,
+  // },
+  // {
+  //   id: 6,
+  //   name: "SaaS Dashboard UI",
+  //   desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
+  //   img: "/sass2.png",
+  //   icon: <Layout className="text-2xl font-bold text-primary-500" />,
+  // },
 ];
