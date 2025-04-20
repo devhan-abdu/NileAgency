@@ -8,6 +8,7 @@
 
 @theme {
   --color-primary-500:oklch(87.83% 0.184 132.98);
+  --color-secondary-500:#00EFFF;
   --font-roboto:"Roboto", sans-serif;;
 }
 
@@ -124,7 +125,7 @@
 
 @layer utility {
   .serviceCard:hover {
-    @apply border-primary-500  translate-y-[-8px] ;
+    @apply border-[#1aa3a3]  translate-y-[-8px] ;
   }
 }
 

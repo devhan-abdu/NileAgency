@@ -1,21 +1,16 @@
 import Image from "next/image"
 const ProjectCard = ({src , title , desc}) => {
   return (
-    <div className='relative overflow-hidden rounded-lg shadow-lg hover:border border-primary-500 max-w-[70vw] mx-auto'>
-      <Image 
-       src={src}
-       alt={title}
-       width={1000}
-       height={1000}
-       className="w-full object-contain "
-       
-      />
+   <div className=" h-[60vh]  flex flex-col items-start gap-2 relative px-4 py-2 ">
+<div class="absolute inset-0 bg-fuchsia-400 bg-[size:20px_20px] opacity-20 blur-[100px]"></div>
 
-      <div className="relative px-6 py-2">
-        <h2 className="text-2xl font-semibold line-clamp-1 text-gray-200">{title}</h2>
-        <p className="text-lg line-clamp-2 text-gray-200">{desc}</p>
-      </div>
+    <div className="relative w-full h-[80%]">
+     <Image fill alt='allah' src={src}/>
     </div>
+    <h2 className="text-xl font-semibold text-gray-300 capitailize">{title}</h2>
+    <p className="text-sm text-gray-500">{desc}</p>
+
+   </div>
   )
 }
 

@@ -4,7 +4,7 @@ export const services =[
     {
       id:1,
       title:"UI/UX Design",
-      icon:<Layout className= "text-2xl font-bold text-primary-500"/>,
+      icon:<Layout className= "text-2xl font-bold "/>,
       desc:"Crafting user-friendly, stunning interfaces for seamless navigation and delightful experiences, tailored to your audience to boost satisfaction and retention"
     },
     {
