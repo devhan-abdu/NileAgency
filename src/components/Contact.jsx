@@ -1,59 +1,51 @@
-import {Mail, Phone, Facebook, Instagram, Twitter } from "lucide-react";
+import { Mail, Phone, Facebook, Instagram, Twitter, PhoneCall, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 
 const Contact = () => {
   return (
-    <div className="py-12 md:py-16 relative ">
-        <div className="absolute inset-0 bg-[#1aa3a3] bg-[size:20px_20px] opacity-10 blur-[100px]"></div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-6 items-center justify-between  relative">
-          <div className="md:col-span-1 lg:col-span-2" >
-            <h1 className="text-gray-500 text-3xl md:text-4xl capitalize font-serif font-semibold text-center mb-8">
-              <span className="text-gray-300">Got A </span>
-              <span className="text-[#1aa3a3]">Project Or A <br />Partnership</span>
-              <span> In </span>
-              <span className="text-gray-300">Mind?</span>
-            </h1>
-            <div className="flex items-center justify-center gap-6 ">
-              <div className="text-center">
-                <div className="bg-primary-500 inline-flex p-2 rounded-full mb-2">
-                  <Phone className="text-black " />
-                </div>
-                <span className="block text-gray-300">+25195234125</span>
-                <span className="block text-gray-300">+251743567212</span>
-              </div>
-              <div className="text-center">
-                <div className="bg-primary-500 inline-flex p-2 rounded-full mb-2">
-                  <Mail className="text-black " />
-                </div>
-                <span className="block text-gray-300">nileagency12@gmail.com</span>
-                <span className="block text-gray-300">nileagencyhan@gmail.com</span>
-              </div>
-            </div>
-            <div className="flex space-x-4 items-center justify-center mt-8 md:mt-12">
-              <Link href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                <Facebook className="text-blue-600 text-2xl hover:text-blue-800 hover:scale-110 duration-300" />
-              </Link>
-              <Link href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                <Instagram className="text-pink-500 text-2xl hover:text-pink-700 hover:scale-110 duration-300" />
-              </Link>
-              <Link href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer">
-                <Twitter className="text-red-600 text-2xl hover:text-red-800 hover:scale-110 duration-300" />
-              </Link>
-            </div>
-          </div>
-
-          <form action="" className="md:col-span-1 lg:col-span-2 ">
-            <div className="grid grid-cols-2 gap-x-4 gap-y-6 w-full">
-              <input type="text" className="rounded-md px-3  py-2  border border-gray-300 outline-none text-gray-200 focus:outline-ring-2 focus:outline-ring-gray-300 placeholder:text-gray-500" placeholder="your name" />
-              <input type="email" className="rounded-md px-3  py-2  border border-gray-300 outline-none text-gray-200 focus:outline-ring-2 focus:outline-ring-gray-300 placeholder:text-gray-500" placeholder="Email address" />
-              <input type="tel" className="rounded-md px-3  py-2  border border-gray-300 outline-none text-gray-200 focus:outline-ring-2 focus:outline-ring-gray-300 placeholder:text-gray-500" placeholder="Phone number" />
-              <input type="text" className="rounded-md px-3  py-2  border border-gray-300 outline-none text-gray-200 focus:outline-ring-2 focus:outline-ring-gray-300 placeholder:text-gray-500" placeholder="Subject" />
-              <textarea name="" id="" rows={4} className=" px-3 py-2 rounded-md span-col-2 border border-gray-300 outline-none text-gray-200 focus:outline-ring-1 focus:outline-ring-gray-300 placeholder:text-gray-500 col-span-2 min-h-24" placeholder="Message" />
-             <Button  variant='outline' className='rounded-full px-6 py-3 cursor-pointer mt-4 w-max'>Send Message</Button>
-            </div>
+    <div className="py-10 md:py-14  ">
+      <p className="text-center mb-1 ">contact us</p>
+      <h2 className="text-3xl lg:text-4xl leading-[1.1] font-bold mb-4 capitalize text-center">
+       GET IN TOUCH WITH US
+      </h2>
+        <div className="flex flex-col md:flex-row place-content-center items-start gap-12  mt-12 md:mt-20">
+          <form action="" className=" flex flex-col gap-6 md:w-1/2 w-full">
+              <input type="text" className=" px-3  py-2  border-b border-gray-500 placeholder:text-foreground-500/80  outline-none" placeholder="your name" />
+              <input type="email" className=" px-3  py-2  border-b  outline-none border-gray-500 placeholder:text-foreground-500/80 " placeholder="Email address" />
+              <input type="tel" className=" px-3  py-2  border-b  outline-none border-gray-500 placeholder:text-foreground-500/80 " placeholder="Phone number" />
+              <input type="text" className=" px-3  py-2  border-b  outline-none border-gray-500 placeholder:text-foreground-500/80 " placeholder="Subject" />
+              <textarea name="" id="" rows={4} className="mt-2 px-3 py-2 rounded-md span-col-2 border border-gray-500 placeholder:text-foreground-500/80 outline-none text-gray-200 focus:outline-ring-1 focus:outline-ring-gray-300 placeholder:text-foreground-500/80 col-span-2 min-h-24" placeholder="Message" />
+              <Button  className='rounded-md px-6 py-3 cursor-pointer mt-4 w-max text-black font-bold'>Send Message</Button>
           </form>
-        </div>
+          <div className="space-y-4 bg-[#202020] rounded-xl shadow-xl px-6 pt-6 pb-3 w-max h-max">
+            <h6 className="text-xl capitalize font-bold text-center">Contact Info</h6>
+            <div className="space-y-2">
+              <div className="inline-flex gap-2 items-center">
+                <h6 className="text-md font-semibold">Phone Number</h6>
+              </div>
+              <p className="ml-8 mb-1 text-sm text-foreground-500/90">+25195234125</p>
+              <p className="ml-8 text-sm text-foreground-500/90">+251743567212</p>
+            </div>
+
+            <div className="space-y-2">
+            <div className="inline-flex gap-2 items-center">
+              <h6 className="text-md font-semibold">Email</h6>
+            </div>
+            <p className="ml-8 mb-1 text-sm text-foreground-500/90">nileagency12@gmail.com</p>
+            <p className="ml-8 text-sm text-foreground-500/90">nileagencyhan@gmail.com</p>
+            </div>
+            <div className="space-y-4 mt-4 ">
+            <h6 className="text-md font-semibold">Follow Us</h6>
+            <div className="inline-flex gap-3 text-sm/6 items-center ml-8">
+              <Linkedin className="hover:scale-105 transition duration-300 size-5" />
+              <Facebook className="hover:scale-105 transition duration-300 size-5" />
+              <Instagram className="hover:scale-105 transition duration-300 size-5" />
+              <Twitter className="hover:scale-105 transition duration-300 size-5" />
+            </div>
+            </div>          
+          </div>
+          </div>
       </div>
   )
 }

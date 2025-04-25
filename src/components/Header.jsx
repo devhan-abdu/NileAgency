@@ -18,19 +18,19 @@ const Header = () => {
     const navLinks = [
         { name: 'Home', href: '/' },
         { name: 'Services', href: '/services' },
-        { name: 'About Us', href: '/about'},
-        { name: 'Contact Us', href: '/contact'}
+        { name: 'About Us', href: '/about' },
+        { name: 'Contact Us', href: '/contact' }
     ]
 
     return (
 
-        <header className='flex items-center p-4'>
+        <header className='flex items-center font-montserrat py-8 text-foreground-500'>
             <div className="flex justify-between items-center gap-4  w-full ">
-                <Link href={'/'} className=" text-primary-500  text-2xl  font-medium font-mono">
+                <Link href={'/'} className=" text-primary-500  text-3xl  font-semibold ">
                     NileAgency
                 </Link >
                 <nav className='hidden md:block'>
-                    <ul className='flex justify-between  text-gray-400 gap-6'>
+                    <ul className='flex justify-between items-center gap-6 w-full py-1'>
                         {
                             navLinks.map((navLink) => {
                                 const isActive = navLink.href === pathName;
@@ -38,23 +38,24 @@ const Header = () => {
                                     <li
                                         key={navLink.href}
                                         className={cn(
-                                            " hover:text-primary-500  duration-300 text-sm px-4 py-2 sm:text-base",
+                                            " hover:text-primary-500  duration-300  ",
                                             isActive && "text-primary-500"
                                         )}
                                     >
                                         <Link href={navLink.href} >{navLink.name}</Link>
-                                    </li>)}) 
-                                    }
+                                    </li>)
+                            })
+                        }
                     </ul>
                 </nav>
                 <Link
                     href="/contact"
                     className={cn(
                         buttonVariants({ variant: 'default' }),
-                        '   hover:scale-[1.05] transform duration-300 hidden md:block'
+                        '   hover:scale-[1.05] transform duration-300 hidden md:block text-black font-semibold '
                     )}
                 >
-                   Become a client
+                    Become a client
                 </Link>
             </div>
             <div className="flex md:hidden">
