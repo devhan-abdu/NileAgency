@@ -2,11 +2,14 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { services, whyChooseUs,testimonials } from "@/lib/serviceDate";
 import RecentProject from "@/components/RecentProject";
+import { recentProject } from "@/lib/serviceDate";
 import { AnimatedTestimonials } from "@/components/ui/AnimatedTestimonials";
 import { buttonVariants } from "@/components/ui/button";
 import Contact from "@/components/Contact";
 
 export default function Home() {
+  const recentWork = recentProject.slice(0, 4);
+ 
   return (
     <div className="font-montserrat text-foreground-500" >
 
@@ -107,7 +110,10 @@ export default function Home() {
         <p className="text-foreground-500/80 text-center max-w-[500px] mx-auto text-sm">
         Real projects, real results. Discover how we’ve made a difference for our clients.
         </p>
-        <RecentProject />
+        <div className="flex items-center justify-center mt-12 md:mt-20">
+
+        <RecentProject projects={recentWork}/>
+        </div>
       </section>
 
       <section className="py-10 md:py-14">

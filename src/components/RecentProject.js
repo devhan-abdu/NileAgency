@@ -1,19 +1,17 @@
 'use client'
-import { recentProject } from "@/lib/serviceDate";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import { useState } from "react";
 
-const RecentProject = () => {
+const RecentProject = ({projects}) => {
     const [hoveredIndex, setHoveredIndex] = useState(null);
     const springConfig = { type: "spring", stiffness: 100, damping: 20 };
 
     
     return (
-       <div className="flex items-center justify-center mt-12 md:mt-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {
-                recentProject.map((item, index) => (
+                projects.map((item, index) => (
                     <motion.div
                     key={index}
                     className="relative p-4 rounded-lg"
@@ -38,7 +36,7 @@ const RecentProject = () => {
 
             }
         </div>
-       </div>
+       
     );
 };
 
