@@ -9,17 +9,6 @@ import { whyChooseUs } from "@/lib/serviceDate"
 
 
 const Service = () => {
-  const [benfit, setBenfit] = useState({ index: 0, image: benefits[0].image })
-  const [isFading, setIsFading] = useState(false)
-
-  const handleImageChange = (index, image) => {
-    setIsFading(true);
-    setTimeout(() => {
-      setBenfit({ index, image });
-      setIsFading(false)
-    }, 500)
-  }
-
   return (
     <div className="font-montserrat text-foreground-500" >
       <section className="px-2 sm:px-0 pt-16 pb-8 md:pt-24  ">

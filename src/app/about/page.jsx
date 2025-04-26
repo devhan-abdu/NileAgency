@@ -179,8 +179,8 @@ const About = () => {
         <div className="flex items-center justify-center mt-12 md:mt-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
         {
-          [1,2,3,4,5,6].map((item) =>(
-            <div >
+          [1,2,3,4,5,6].map((item , index) =>(
+            <div key={index} >
             <div className="size-[260px] md:size-[230px] lg:size-[200px] mx-auto ">
               <img src="/profile.jpg" alt="" className="h-full w-full rounded-full  object-cover object-center" />
             </div>
