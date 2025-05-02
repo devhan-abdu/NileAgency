@@ -12,8 +12,9 @@ export const getProjectsQuery = `*[_type == "project"]{
     "imageUrl": image.asset->url
   }`;
 
-  
-  export const getSingleProjectQuery =`*[_type == "project" && slug.current == $slug][0]{
+
+export const getSingleProjectQuery = `*[_type == "project" && slug.current == $slug][0]{
+
   _id,
     clientName,
     slug,
@@ -26,4 +27,10 @@ export const getProjectsQuery = `*[_type == "project"]{
     testimonial,
     "imageUrl": image.asset->url
   }`
-  
+export const testimonialQuery = `*[_type == "project"]{
+    "ceoName": testimonial.ceoName,
+      "companyName": testimonial.companyName,
+      "imageUrl": testimonial.image.asset->url,
+      "message": testimonial.message
+  }`
+

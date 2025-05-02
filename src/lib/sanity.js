@@ -8,10 +8,11 @@ export const client = createClient({
     dataset: 'production',
     apiVersion: '2025-04-28', 
     useCdn: true, 
+    token: process.env.SANITY_WRITE_TOKEN,
   });
 
 export async function fetchProjects() {
-  await new Promise((resolve) => setTimeout(resolve, 3000)); // 3 seconds delay
+
   return await client.fetch(getProjectsQuery);
 }
 

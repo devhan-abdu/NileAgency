@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import { client } from '@/lib/sanity'
-import { recentProject } from '@/lib/serviceDate'
 import { ArrowLeftIcon, ArrowRightIcon, Quote } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
@@ -31,7 +30,8 @@ if (!project) {
                 </h1>
             </section>
             <section className='py-4 my-8  '>
-                <Link href="/portfolio" className='inline-flex items-center justify-start gap-2 text-primary-500 text-xl font-bold hover:text-foreground-500 duration-500' >
+                <Link href="/portfolio" className='font-poppins inline-flex items-center justify-start gap-2 text-primary-500 text-xl font-bold hover:text-foreground-500 duration-500' >
+
                     <ArrowLeftIcon /> <span>Back to portfolio</span>
                 </Link>
             </section>
@@ -84,12 +84,13 @@ if (!project) {
             <section className="py-10 md:py-14">
                 <div className='flex flex-col items-center justify-center max-w-[500px] mx-auto text-center'>
                     <Quote className='mb-4'/>
-                    <p className=''>{project.testimonial}</p>
+                    <p className=''>{project.testimonial.message}</p>
                     <div class="flex  gap-2 p-8 flex-row items-center sm:gap-6 sm:py-4 ...">
                         <div className='h-16 w-16 rounded-full text-black bg-white flex items-center justify-center'>H</div>
                             <div class="space-y-0.5">
-                                <p class="text-lg font-semibold ">Erin Lindford</p>
-                                <p class="font-medium capitalize">{project.clientName} CEO</p>
+                                <p class="text-lg font-semibold ">{project.testimonial.ceoName}</p>
+                                <p class="font-medium capitalize">{project.testimonial.companyName} CEO</p>
+
                             </div>
                     </div>
                 </div>
@@ -101,10 +102,11 @@ if (!project) {
                 <hr  className='grow hidden sm:block'/>
                </div>
               <div className='flex items-center justify-between gap-6 '>
-             {prevProject ? <Link  href={`/portfolio/${prevProject.slug.current}`}  className='inline-flex items-center justify-start gap-2 text-primary-500 text-xl font-bold hover:text-foreground-500 duration-500' >
+             {prevProject ? <Link  href={`/portfolio/${prevProject.slug.current}`}  className='inline-flex items-center justify-start gap-2 text-primary-500 text-xl font-bold hover:text-foreground-500 duration-500 font-poppins' >
                     <ArrowLeftIcon /> <span className='capitalize'>{prevProject.clientName}</span>
                 </Link> : <div/>}
-               {nextProject ? <Link href={`/portfolio/${nextProject.slug.current}`}  className='inline-flex items-center justify-start gap-2 text-primary-500 text-xl font-bold hover:text-foreground-500 duration-500' >
+               {nextProject ? <Link href={`/portfolio/${nextProject.slug.current}`}  className='inline-flex items-center justify-start gap-2 text-primary-500 text-xl font-bold hover:text-foreground-500 duration-500 font-poppins' >
+
                    <span className='capitalize'>{nextProject.clientName}</span>  <ArrowRightIcon />
                 </Link> :<div/>}
               </div>

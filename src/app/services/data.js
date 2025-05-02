@@ -56,17 +56,17 @@ export const strategySteps = [
   {
     icon: <Search size={32}  />,
     title: 'Market Research',
-    description: 'We analyze your industry, audience, and competitors to create informed strategies.',
+    description: 'We analyze your industry, audience, and competitors to create effective strategies.',
   },
   {
     icon: <Brush size={32}  />,
     title: 'Design & Development',
-    description: 'Our team designs and builds tailored solutions with cutting-edge technology.',
+    description: 'Our team designs and develops tailored solutions using cutting-edge technology.',
   },
   {
     icon: <CheckCircle size={32}  />,
     title: 'Quality Assurance',
-    description: 'We rigorously test and refine to deliver flawless, high-quality results.',
+    description: 'We rigorously test and refine to deliver flawless, high-quality results every time.',
   },
 ];
 

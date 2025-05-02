@@ -40,10 +40,11 @@ const Header = () => {
     }
     return (
 
-        <header className='flex items-center justify-between font-poppins  text-foreground-500 px-4 py-8'>
+        <header className='flex items-center justify-between font-poppins  text-foreground-500 px-4 py-8 font-poppins'>
             <FloatingNav navItems={navLinks} />
             <div className="flex justify-between items-center place-content-center gap-4 w-full">
-                <Link href={'/'} className="text-primary-500 text-3xl font-semibold inline-block font-montserrat">
+                <Link href={'/'} className="text-primary-500 text-3xl font-semibold inline-block font-serif">
+
                     NileAgency
                 </Link>
                 <nav className='hidden md:flex grow'>
@@ -53,7 +54,8 @@ const Header = () => {
                         }
                     </ul>
                     <Link href={'/contact'}
-                        className=" border text-sm font-medium relative border-white/[0.2] text-black bg-primary-500 px-4 py-2 rounded-lg ">
+                        className="font-poppins border text-sm font-medium relative border-white/[0.2] text-black bg-primary-500 px-4 py-2 rounded-lg ">
+
                         <span>Become a client</span>
                     </Link>
                 </nav>

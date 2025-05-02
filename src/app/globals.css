@@ -136,6 +136,10 @@
 @layer base {
   .font-montserrat {
     font-family: var(--font-montserrat), sans-serif;
+  };
+  .font-poppins {
+    font-family: var(--font-poppins), sans-serif;
+
   }
 }
 
@@ -143,5 +147,9 @@
   .serviceCard:hover {
     @apply border-white/60 translate-y-[-4px] bg-[#202020];
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 

@@ -1,9 +1,10 @@
 
 export default function Loading() {
     return (
-      <div className="font-montserrat text-foreground-500 animate-pulse">
-        <section className="px-4 pt-20 pb-10  mx-auto ">
-          <div className="space-y-4">
+      <div className=" text-foreground-500 animate-pulse">
+      <section className="px-2 sm:px-0 pt-16 pb-8 md:pt-24 flex flex-col items-left justify-left sm:justify-center">
+      <div className="space-y-4 ">
+
             <div className="h-10 w-3/4 bg-gray-800 rounded"></div>
             <div className="h-4 w-full bg-gray-800 rounded"></div>
             <div className="h-4 w-5/6 bg-gray-800 rounded"></div>

@@ -1,30 +1,36 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { services, whyChooseUs,testimonials } from "@/lib/serviceDate";
+import { services, whyChooseUs } from "@/lib/serviceDate";
 import RecentProject from "@/components/RecentProject";
-import { recentProject } from "@/lib/serviceDate";
+import { client } from "@/lib/sanity";
 import { AnimatedTestimonials } from "@/components/ui/AnimatedTestimonials";
 import { buttonVariants } from "@/components/ui/button";
 import Contact from "@/components/Contact";
+import { fetchProjects } from "@/lib/sanity";
+import { testimonialQuery } from "@/lib/queries";
 
-export default function Home() {
-  const recentWork = recentProject.slice(0, 4);
+export default async function Home() {
+    const recentWork = (await fetchProjects()).slice(0,4)
+    const ProjectTestimonials = (await client.fetch(testimonialQuery)).slice(0,6);
+    
+    
  
   return (
-    <div className="font-montserrat text-foreground-500" >
+    <div className="font-poppins text-foreground-500" >
 
       <section className="pt-16 pb-8 md:pt-24 md:pb-24 grid grid-cols-1 md:grid-cols-2 items-center gap-y-16 gap-x-4">
         <div className="text-left  ">
-          <p className="mb-1" >10 years of experiance !</p>
-          <h1 className="text-4xl lg:text-5xl leading-[1.1] font-bold mb-4 capitalize">
-            Best Digital<br /> Creative Agency<br /> for your Brand
-          </h1>
+          <p className="mb-1 font-montserrat" >10 years of experiance !</p>
+          <h1 className="text-5xl lg:text-[54px] leading-[1.1] font-bold mb-4 capitalize font-montserrat">
+          Smart Strategies Stunning Designs Strong Results              </h1>
+
           <p className="mb-6 text-foreground-500/80">NileAgency brings the strength and flow of the Nile to your digital presence. We specialize in web development, app innovation, and user-centric UI/UX design.</p>
           <Link
             href="/contact"
             className={cn(
               buttonVariants({ variant: 'default', size: 'lg' }),
-              'font-montserrat font-semibold text-lg hover:scale-[1.05] transform duration-300 px-6 py-3 relative text-background-500 '
+              'font-poppins font-semibold text-lg hover:scale-[1.05] transform duration-300 px-6 py-3 relative text-background-500 '
+
             )}
           >
             Contact Us
@@ -46,9 +52,12 @@ export default function Home() {
 
       <section className="py-10 md:py-14 ">
         <p className="text-center mb-1">Services</p>
-        <h2 className="text-3xl lg:text-4xl leading-[1.1] font-bold mb-4 capitalize text-center">
+        <h2 className="text-3xl lg:text-4xl leading-[1.1] font-bold mb-4 capitalize text-center font-montserrat">
           What Services We Are Provide
         </h2>
+        <p className="text-foreground-500/80 text-center max-w-[500px] mx-auto text-sm">
+        Explore our full range of digital services — crafted to elevate your brand and drive meaningful results.        </p>
+
         <div className="flex items-center justify-center mt-12 md:mt-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {
@@ -58,7 +67,9 @@ export default function Home() {
                     {item.icon}
                     <h3 className=" text-xl font-semibold mb-2 ">{item.title}</h3>
                     <p className="text-xs leading-4 text-start lowercase mb-2 text-foreground-500/80">{item.desc}</p>
-                    <button className="cursor-pointer font-semibold text-md "> Learn more &rarr;</button>
+
+                    <Link href={'/services'} className="cursor-pointer font-semibold text-md "> Learn more &rarr;</Link>
+
                   </div>
                 </div>
               ))
@@ -69,12 +80,12 @@ export default function Home() {
 
       <section className="py-10 md:py-14 ">
         <p className="text-center mb-1">why choose us</p>
-        <h2 className="text-3xl lg:text-4xl leading-[1.1] font-bold mb-4 capitalize text-center">
+        <h2 className="text-3xl lg:text-4xl leading-[1.1] font-bold mb-4 capitalize text-center font-montserrat">
           Why NileAgency Stands Out
         </h2>
         <p className="text-foreground-500/80 text-center max-w-[500px] mx-auto text-sm">
-          NileAgency delivers success with innovative strategies and a commitment
-          to your goals. Join 100+ clients who trust us.
+        NileAgency delivers success with smart strategies, committed to your goals — trusted by over 100 clients.
+
         </p>
 
         <div className="mt-12 md:mt-20">
@@ -104,11 +115,11 @@ export default function Home() {
 
       <section className="py-10 md:py-14 ">
         <p className="text-center mb-1 ">Projects</p>
-        <h2 className="text-3xl lg:text-4xl leading-[1.1] font-bold mb-4 capitalize text-center">
+        <h2 className="text-3xl lg:text-4xl leading-[1.1] font-bold mb-4 capitalize text-center font-montserrat">
           Our Success Stories
         </h2>    
         <p className="text-foreground-500/80 text-center max-w-[500px] mx-auto text-sm">
-        Real projects, real results. Discover how we’ve made a difference for our clients.
+        Real projects, real results — see how we've created lasting impact and measurable growth for our clients.
         </p>
         <div className="flex items-center justify-center mt-12 md:mt-20">
 
@@ -118,30 +129,16 @@ export default function Home() {
 
       <section className="py-10 md:py-14">
         <p className="text-center mb-1 ">Testimonial</p>
-        <h2 className="text-3xl lg:text-4xl leading-[1.1] font-bold mb-4 capitalize text-center">
+        <h2 className="text-3xl lg:text-4xl leading-[1.1] font-bold mb-4 capitalize text-center font-montserrat">
         What's Our Client Say About Us
         </h2>  
-      <AnimatedTestimonials testimonials={testimonials} />
+        <p className="text-foreground-500/80 text-center max-w-[500px] mx-auto text-sm">
+        Hear what our clients say about working with NileAgency — real stories of growth, trust, and success.        </p>
+      <AnimatedTestimonials testimonials={ProjectTestimonials} />
 
       </section>
 
       <Contact />
-
-      <section className="py-10 md:py-14 relative">
-        <div className=" flex flex-col items-center justify-center relative  py-16 rounded-xl ">
-        <div className="absolute inset-0 -z-10 h-full w-full items-center rounded-xl px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#202020_60%,#328c05_100%)]"></div>
-
-          <p className=" text-sm mb-1">Join Our Community</p>
-          <h1 className="text-3xl md:text-4xl capitalize  font-semibold text-center mb-4">
-            Stay in the loop
-          </h1>
-          <p className="text-lg">No spam. Just smart ideas</p>
-          <div className="flex  border border-forground-500/50 placholder:text-black  rounded-full mt-12">
-            <input type="email" placeholder="Enter Your Email" className="outline-none focus:outline-none px-4 md:px-6 py-2.5 rounded-l-full" />
-            <button className="rounded-r-full text-black bg-foreground-500 px-4 font-semibold">Get Started</button>
-          </div>
-        </div>
-      </section>
 
     </div>
   );
