@@ -76,7 +76,7 @@ const Service = () => {
 
           ))}
         </div>
-      </section
+      </section>
       <section className="py-10 md:py-14 ">
       <p className="text-center mb-1 font-montserrat">Strategy</p>
        
