@@ -23,12 +23,14 @@ export default async function Home() {
           <p className="mb-1 font-montserrat" >10 years of experiance !</p>
           <h1 className="text-5xl lg:text-[54px] leading-[1.1] font-bold mb-4 capitalize font-montserrat">
           Smart Strategies Stunning Designs Strong Results              </h1>
+
           <p className="mb-6 text-foreground-500/80">NileAgency brings the strength and flow of the Nile to your digital presence. We specialize in web development, app innovation, and user-centric UI/UX design.</p>
           <Link
             href="/contact"
             className={cn(
               buttonVariants({ variant: 'default', size: 'lg' }),
               'font-poppins font-semibold text-lg hover:scale-[1.05] transform duration-300 px-6 py-3 relative text-background-500 '
+
             )}
           >
             Contact Us
@@ -55,6 +57,7 @@ export default async function Home() {
         </h2>
         <p className="text-foreground-500/80 text-center max-w-[500px] mx-auto text-sm">
         Explore our full range of digital services — crafted to elevate your brand and drive meaningful results.        </p>
+
         <div className="flex items-center justify-center mt-12 md:mt-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {
@@ -64,7 +67,9 @@ export default async function Home() {
                     {item.icon}
                     <h3 className=" text-xl font-semibold mb-2 ">{item.title}</h3>
                     <p className="text-xs leading-4 text-start lowercase mb-2 text-foreground-500/80">{item.desc}</p>
+
                     <Link href={'/services'} className="cursor-pointer font-semibold text-md "> Learn more &rarr;</Link>
+
                   </div>
                 </div>
               ))
@@ -80,6 +85,7 @@ export default async function Home() {
         </h2>
         <p className="text-foreground-500/80 text-center max-w-[500px] mx-auto text-sm">
         NileAgency delivers success with smart strategies, committed to your goals — trusted by over 100 clients.
+
         </p>
 
         <div className="mt-12 md:mt-20">
@@ -133,6 +139,7 @@ export default async function Home() {
       </section>
 
       <Contact />
+
     </div>
   );
 }

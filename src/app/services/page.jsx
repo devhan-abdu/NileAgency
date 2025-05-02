@@ -5,6 +5,7 @@ import Contact from "@/components/Contact";
 import { clientLogos, strategySteps, services } from './data'
 
 
+
 const Service = () => {
   return (
     <div className="font-poppins text-foreground-500" >
@@ -19,6 +20,7 @@ const Service = () => {
             className={cn(
               buttonVariants({ variant: 'default', size: 'lg' }),
               'font-poppins font-semibold text-lg hover:scale-[1.05] transform duration-300 px-6 py-3 relative text-background-500 '
+
             )}
           >
             Descover our Service
@@ -34,6 +36,7 @@ const Service = () => {
           <p className="text-foreground-500/80 text-center max-w-[500px] mx-auto text-sm">
           Explore our full range of digital services — crafted to elevate your brand and drive meaningful results.        </p>
         <div className="mt-12 md:mt-16  font-montserrat">
+
           {services.map((service, index) => (
             <div
               key={index}
@@ -45,6 +48,7 @@ const Service = () => {
                   <h3 className="text-2xl font-bold  text-gray-200 ">{service.title}</h3>
                 </div>
                 <p className="mb-4 line-clamp-4 text-foreground-500/80 ">{service.description}</p>
+
                 <ul className="list-disc list-inside text-gray-100 mb-8 ml-4">
                   {service.features.map((feature, i) => (
                     <li key={i}>{feature}</li>
@@ -72,7 +76,7 @@ const Service = () => {
 
           ))}
         </div>
-      </section>
+      </section
       <section className="py-10 md:py-14 ">
       <p className="text-center mb-1 font-montserrat">Strategy</p>
        
@@ -81,16 +85,19 @@ const Service = () => {
           </h1>
         <p className="text-foreground-500/80 text-center max-w-[500px] mx-auto text-sm">
         Our proven strategy combines creativity, expertise, and technology to drive measurable results.       </p>
+
         <div className="grid grid-cols-1 md:grid-cols-3  gap-6 mt-10 md:mt-16 ">
           {strategySteps.map((step, index) => (
             <div key={index} className="serviceCard  py-6 px-4 max-w-[330px] max-h-[230px] mx-auto  rounded-lg shadow-xl text-center cursor-pointer border border-gray-600 transition transform duration-300">
               <div className="flex justify-center mb-4">{step.icon}</div>
               <h4 className="text-xl font-bold  mb-2 font-montserrat">{step.title}</h4>
               <p className=" text-foreground-500/80 ">{step.description}</p>
+
             </div>
           ))}
         </div>
       </section>
+
       <Contact />
 
     </div>

@@ -12,6 +12,7 @@ export const client = createClient({
   });
 
 export async function fetchProjects() {
+
   return await client.fetch(getProjectsQuery);
 }
 

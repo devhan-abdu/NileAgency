@@ -31,6 +31,7 @@ if (!project) {
             </section>
             <section className='py-4 my-8  '>
                 <Link href="/portfolio" className='font-poppins inline-flex items-center justify-start gap-2 text-primary-500 text-xl font-bold hover:text-foreground-500 duration-500' >
+
                     <ArrowLeftIcon /> <span>Back to portfolio</span>
                 </Link>
             </section>
@@ -89,6 +90,7 @@ if (!project) {
                             <div class="space-y-0.5">
                                 <p class="text-lg font-semibold ">{project.testimonial.ceoName}</p>
                                 <p class="font-medium capitalize">{project.testimonial.companyName} CEO</p>
+
                             </div>
                     </div>
                 </div>
@@ -104,6 +106,7 @@ if (!project) {
                     <ArrowLeftIcon /> <span className='capitalize'>{prevProject.clientName}</span>
                 </Link> : <div/>}
                {nextProject ? <Link href={`/portfolio/${nextProject.slug.current}`}  className='inline-flex items-center justify-start gap-2 text-primary-500 text-xl font-bold hover:text-foreground-500 duration-500 font-poppins' >
+
                    <span className='capitalize'>{nextProject.clientName}</span>  <ArrowRightIcon />
                 </Link> :<div/>}
               </div>

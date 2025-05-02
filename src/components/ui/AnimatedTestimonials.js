@@ -42,6 +42,7 @@ export const AnimatedTestimonials = ({
               {testimonials.map((testimonial, index) => (
                 <motion.div
                   key={index}
+
                   initial={{
                     opacity: 0,
                     scale: 0.9,
@@ -72,6 +73,7 @@ export const AnimatedTestimonials = ({
                   <img
                     src={testimonial.imageUrl}
                     alt={testimonial.ceoName}
+
                     width={500}
                     height={500}
                     draggable={false}
@@ -108,6 +110,7 @@ export const AnimatedTestimonials = ({
             </p>
             <motion.p className="mt-8 text-lg text-foreground-500/70 ">
               {testimonials[active].message.split(" ").map((word, index) => (
+
                 <motion.span
                   key={index}
                   initial={{
@@ -150,5 +153,4 @@ export const AnimatedTestimonials = ({
     </div>
   );
 };
-
 

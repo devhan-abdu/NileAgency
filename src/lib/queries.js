@@ -14,6 +14,7 @@ export const getProjectsQuery = `*[_type == "project"]{
 
 
 export const getSingleProjectQuery = `*[_type == "project" && slug.current == $slug][0]{
+
   _id,
     clientName,
     slug,
@@ -32,3 +33,4 @@ export const testimonialQuery = `*[_type == "project"]{
       "imageUrl": testimonial.image.asset->url,
       "message": testimonial.message
   }`
+

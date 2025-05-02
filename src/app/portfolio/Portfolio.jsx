@@ -21,6 +21,7 @@ export default function Portfolio({ projects }) {
     { name: 'Digital Marketing', value: 'digitalmarketing' },
     { name: 'Ecommerce', value: 'ecommerce' },
 
+
   ]
 
 
@@ -73,6 +74,7 @@ export default function Portfolio({ projects }) {
       <section className="px-2 sm:px-0 pt-16 pb-8 md:pt-24">
         <div className="text-left md:text-center max-w-[700px] mx-auto">
           <h1 className="text-4xl lg:text-6xl leading-[1.3] font-bold mb-4 capitalize font-montserrat">
+
             Design That Speak Louder Than Words
           </h1>
           <p className="mb-6 text-base sm:pr-6 pr-0">
@@ -81,6 +83,7 @@ export default function Portfolio({ projects }) {
             your brand
           </p>
           <div className="flex flex-col sm:flex-row items-center place-content-around gap-8 sm:gap-4 py-10 border-t border-gray-600 shadow-xl max-w-[700px] mx-auto rounded-lg text-gray-400">
+
             <div className="px-2">
               <p className="text-5xl sm:text-6xl font-bold mb-2 animate-fade text-gray-200">
                 150+
@@ -92,6 +95,7 @@ export default function Portfolio({ projects }) {
               className={cn(
                 buttonVariants({ variant: "default", size: "lg" }),
                 "font-poppins font-semibold hover:scale-[1.05] transform duration-300 p-5 text-black rounded-md text-lg"
+
               )}
             >
               Explore Our Work
@@ -101,7 +105,9 @@ export default function Portfolio({ projects }) {
       </section>
 
       <section className="py-10 md:py-14" id="projects">
+
         <h1 className="text-3xl lg:text-4xl leading-[1.4] font-bold capitalize text-center max-w-[900px] mx-auto mb-10 md:mb-16 font-montserrat">
+
           A Decade of Digital Success for Clients Now Yours 🫵
         </h1>
         <div className="flex flex-col md:flex-row gap-12 relative">
@@ -115,6 +121,7 @@ export default function Portfolio({ projects }) {
                       key={index}
                       className={cn(
                         "cursor-pointer uppercase text-sm md:text-base capitalize pr-4 md:pr-0",
+
                         item.value === category
                           ? "text-primary-500"
                           : "text-foreground-500/80"
@@ -131,6 +138,7 @@ export default function Portfolio({ projects }) {
                 className={cn(
                   buttonVariants({ variant: "default" }),
                   "font-poppins font-semibold text-lg hover:scale-[1.05] transform duration-300 p-5 text-black rounded-md hidden md:inline-flex items-center"
+
                 )}
               >
                 Have a Project?
@@ -138,6 +146,7 @@ export default function Portfolio({ projects }) {
             </div>
           </div>
           <div className="grow w-full md:w-3/4 ">
+
             {filteredProjects.length === 0 ? (
               <div className="flex flex-col h-full items-center justify-center text-foreground-500/80">
                 <FolderMinus className="h-12 w-12 mb-4" />
@@ -157,7 +166,6 @@ export default function Portfolio({ projects }) {
         </div>
       </section>
       <section id="contact"><Contact /></section>
-
     </div>
   );
 }
