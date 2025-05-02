@@ -5,9 +5,10 @@ import Link from 'next/link'
 import React from 'react'
 import { getSingleProjectQuery } from '@/lib/queries'
 import { notFound } from 'next/navigation'
+import { urlFor } from '@/lib/sanity'
 
 export default async function ProjectDetail({params}) {
-    const {slug} = params;
+    const {slug} =await params;
 
     const project = await client.fetch(getSingleProjectQuery,{slug});
     const allProjects = await client.fetch(`*[_type == "project"]{
@@ -16,7 +17,7 @@ export default async function ProjectDetail({params}) {
       const currentIndex = allProjects.findIndex(p => p.slug.current === slug);
       const prevProject = currentIndex > 0 ? allProjects[currentIndex - 1] : null;
       const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentIndex + 1] : null;
-
+   
 
 if (!project) {
   return notFound()
@@ -85,11 +86,11 @@ if (!project) {
                 <div className='flex flex-col items-center justify-center max-w-[500px] mx-auto text-center'>
                     <Quote className='mb-4'/>
                     <p className=''>{project.testimonial.message}</p>
-                    <div class="flex  gap-2 p-8 flex-row items-center sm:gap-6 sm:py-4 ...">
-                        <div className='h-16 w-16 rounded-full text-black bg-white flex items-center justify-center'>H</div>
-                            <div class="space-y-0.5">
-                                <p class="text-lg font-semibold ">{project.testimonial.ceoName}</p>
-                                <p class="font-medium capitalize">{project.testimonial.companyName} CEO</p>
+                    <div className="flex  gap-2 p-8 flex-row items-center sm:gap-6 sm:py-4 ...">
+                    <img className="mx-auto block w-16 h-16 rounded-full object-cover object-center" src={urlFor(project.testimonial.image ).url()} alt="" />  
+                                              <div className="space-y-0.5">
+                                <p className="text-lg font-semibold ">{project.testimonial.ceoName}</p>
+                                <p className="font-medium capitalize">{project.testimonial.companyName} CEO</p>
 
                             </div>
                     </div>
