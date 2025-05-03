@@ -1,3 +1,4 @@
+import Footer from "@/components/footer/Footer";
 import "./globals.css";
 import Header from "@/components/Header";
 import { Montserrat } from 'next/font/google';
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
         <Header/>
         {children}
         <Toaster position="top-right"  />
+        <Footer/>
 
       </body>
     </html>
