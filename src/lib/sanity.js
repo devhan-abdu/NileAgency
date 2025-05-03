@@ -1,5 +1,4 @@
 import { createClient } from '@sanity/client';
-import { getProjectsQuery } from './queries';
 import imageUrlBuilder from '@sanity/image-url';
 
 
@@ -11,10 +10,9 @@ export const client = createClient({
     token: process.env.SANITY_WRITE_TOKEN,
   });
 
-export async function fetchProjects() {
-
-  return await client.fetch(getProjectsQuery);
-}
+  export async function fetchProjects(queries) {
+    return await client.fetch(queries);
+  }
 
 const builder = imageUrlBuilder(client);
 

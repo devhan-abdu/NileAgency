@@ -9,10 +9,11 @@ import Contact from "@/components/Contact";
 import { fetchProjects } from "@/lib/sanity";
 import { testimonialQuery } from "@/lib/queries";
 import { clientLogos } from "./services/data";
+import { getRecentProjectsQuery } from "@/lib/queries";
 
 export default async function Home() {
-  const recentWork = (await fetchProjects()).slice(0, 4)
-  const ProjectTestimonials = (await client.fetch(testimonialQuery)).slice(0, 6);
+  const recentWork = await fetchProjects(getRecentProjectsQuery)
+  const ProjectTestimonials = await fetchProjects(testimonialQuery)
 
   return (
     <div className="font-poppins text-foreground-500" >
@@ -25,7 +26,7 @@ export default async function Home() {
           <p className="mb-6 text-foreground-500/80">
             NileAgency brings the strength and flow of the Nile to your digital presence.
           </p>
-          <div className="flex items-center sm:justify-center justify-start gap-12">
+          <div className="flex items-center sm:justify-center justify-start gap-6">
             <Link
               href="/contact"
               className={cn(
