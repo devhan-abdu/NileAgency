@@ -78,11 +78,25 @@ export const benefits = [
 ];
 
 export const clientLogos = [
-  '/skylight.png',
-  '/negedbank-.png',
-  '/berreyAdvert-.png',
-  '/hyleresort-.png',
-  '/ethioistambul.png',
+  '/corel.svg',
+  '/creative-new.svg',
+  '/nokia.svg',
+  '/opera.svg',
+  '/oppo-new.svg',
+  '/schibsted.svg',
+  // '/corel.svg',
+  // '/creative-new.svg',
+  // '/nokia.svg',
+  // '/opera.svg',
+  // '/oppo-new.svg',
+  // '/schibsted.svg',
+  // '/corel.svg',
+  // '/creative-new.svg',
+  // '/nokia.svg',
+  // '/opera.svg',
+  // '/oppo-new.svg',
+  // '/schibsted.svg',
+  
 ];
 export const solutions = [
   {

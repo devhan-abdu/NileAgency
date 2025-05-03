@@ -8,47 +8,84 @@ import { buttonVariants } from "@/components/ui/button";
 import Contact from "@/components/Contact";
 import { fetchProjects } from "@/lib/sanity";
 import { testimonialQuery } from "@/lib/queries";
+import { clientLogos } from "./services/data";
 
 export default async function Home() {
-    const recentWork = (await fetchProjects()).slice(0,4)
-    const ProjectTestimonials = (await client.fetch(testimonialQuery)).slice(0,6);
-    
-    
- 
+  const recentWork = (await fetchProjects()).slice(0, 4)
+  const ProjectTestimonials = (await client.fetch(testimonialQuery)).slice(0, 6);
+
   return (
     <div className="font-poppins text-foreground-500" >
-
-      <section className="pt-16 pb-8 md:pt-24 md:pb-24 grid grid-cols-1 md:grid-cols-2 items-center gap-y-16 gap-x-4">
-        <div className="text-left  ">
-          <p className="mb-1 font-montserrat" >10 years of experiance !</p>
-          <h1 className="text-5xl lg:text-[54px] leading-[1.1] font-bold mb-4 capitalize font-montserrat">
-          Smart Strategies Stunning Designs Strong Results              </h1>
-
-          <p className="mb-6 text-foreground-500/80">NileAgency brings the strength and flow of the Nile to your digital presence. We specialize in web development, app innovation, and user-centric UI/UX design.</p>
-          <Link
-            href="/contact"
-            className={cn(
-              buttonVariants({ variant: 'default', size: 'lg' }),
-              'font-poppins font-semibold text-lg hover:scale-[1.05] transform duration-300 px-6 py-3 relative text-background-500 '
-
-            )}
-          >
-            Contact Us
-          </Link>
-        </div>
-        <div className="relative mx-auto">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-500/20 from-10% via-transparent via-30% to-primary-500/20 to-90% blur-[150px]"></div>
-          <div
-            className="relative w-full max-w-[300px] xs:max-w-[320px] sm:w-[400px] lg:max-w-[650px]  backdrop-blur">
-            <div className="absolute inset-0  -top-6 -bottom-6 bg-gradient-to-br from-[#4ADE80]/10 to-[#3B82F6]/10 rounded-2xl sm:rounded-3xl transform rotate-3"></div>
-            <div className="absolute inset-0 -z-3 -top-6 -bottom-6 bg-gradient-to-br from-[#FF8C00]/10 to-[#4ADE80]/10 rounded-2xl sm:rounded-3xl transform -rotate-3"></div>
-            <div className="relative aspect-square rounded-xl sm:rounded-2xl  overflow-hidden">
-              <img alt="nileagency" className="w-full h-full object-contain  transform hover:scale-105 transition-transform duration-500 " src="/nileagency.png" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1E293B]/60 via-[#1E293B]/20 to-transparent"></div>
-            </div>
+      <section className="pt-16 pb-8 md:pt-20 md:pb-24 relative overflow-hidden">
+        <div className="text-left sm:text-center">
+          <p className="mb-1 font-montserrat">10 years of experience!</p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[1.1] font-bold mb-4 capitalize font-montserrat">
+            Smart Strategies <br /> Strong Results
+          </h1>
+          <p className="mb-6 text-foreground-500/80">
+            NileAgency brings the strength and flow of the Nile to your digital presence.
+          </p>
+          <div className="flex items-center sm:justify-center justify-start gap-12">
+            <Link
+              href="/contact"
+              className={cn(
+                buttonVariants({ variant: 'default', size: 'lg' }),
+                'font-poppins font-semibold text-lg hover:scale-[1.05] transform duration-300 px-6 py-3 relative text-background-500'
+              )}
+            >
+              Contact Us
+            </Link>
+            <Link
+              href="https://t.me/niletech1"
+              className={cn(
+                buttonVariants({ variant: 'outline', size: 'lg' }),
+                'font-poppins font-semibold text-lg hover:scale-[1.05] transform duration-300 px-6 py-3 relative'
+              )}
+            >
+              Join Us
+            </Link>
           </div>
         </div>
+        <svg
+          viewBox="0 0 1440 820"
+          className=" w-full h-[120px] md:h-[220px] z-0 overflow-hidden"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="#5dd623" stopOpacity="0.2" />
+              <stop offset="50%" stopColor="#5dd623" stopOpacity="1" />
+              <stop offset="100%" stopColor="#5dd623" stopOpacity="0.2" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M0,820 C480,200 960,200 1440,820"
+            stroke="url(#glow)"
+            strokeWidth="8"
+            fill="none"
+          />
+        </svg>
+        <div className="space-y-12">
+          <div className='flex items-center justify-center gap-4 max-w-[500px] mx-auto'>
+            <hr className='grow hidden sm:block' />
+            <p className='font-bold sm:text-xl text-lg '>Trusted By Amazing Brand</p>
+            <hr className='grow hidden sm:block' />
+          </div>
+          <div className="overflow-hidden whitespace-nowrap relative w-full">
+            <div className="flex mx-auto w-max space-x-16 animate-scroll">
+              {
+                clientLogos.map((item , idx) => (
+                  <img key={`logo1-${idx}`} src={item} className="mx-8 w-24 lg:w-32 h-auto inline-block" />                ))
+              }
+               {
+                clientLogos.map((item , idx) => (
+                  <img key={`logo2-${idx}`} src={item} className="mx-8 w-24 lg:w-32 h-auto inline-block" />                ))
+              }
+            </div>          
+          </div>
+          </div>
       </section>
+
 
       <section className="py-10 md:py-14 ">
         <p className="text-center mb-1">Services</p>
@@ -56,7 +93,7 @@ export default async function Home() {
           What Services We Are Provide
         </h2>
         <p className="text-foreground-500/80 text-center max-w-[500px] mx-auto text-sm">
-        Explore our full range of digital services — crafted to elevate your brand and drive meaningful results.        </p>
+          Explore our full range of digital services — crafted to elevate your brand and drive meaningful results.        </p>
 
         <div className="flex items-center justify-center mt-12 md:mt-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -84,7 +121,7 @@ export default async function Home() {
           Why NileAgency Stands Out
         </h2>
         <p className="text-foreground-500/80 text-center max-w-[500px] mx-auto text-sm">
-        NileAgency delivers success with smart strategies, committed to your goals — trusted by over 100 clients.
+          NileAgency delivers success with smart strategies, committed to your goals — trusted by over 100 clients.
 
         </p>
 
@@ -117,24 +154,24 @@ export default async function Home() {
         <p className="text-center mb-1 ">Projects</p>
         <h2 className="text-3xl lg:text-4xl leading-[1.1] font-bold mb-4 capitalize text-center font-montserrat">
           Our Success Stories
-        </h2>    
+        </h2>
         <p className="text-foreground-500/80 text-center max-w-[500px] mx-auto text-sm">
-        Real projects, real results — see how we've created lasting impact and measurable growth for our clients.
+          Real projects, real results — see how we've created lasting impact and measurable growth for our clients.
         </p>
         <div className="flex items-center justify-center mt-12 md:mt-20">
 
-        <RecentProject projects={recentWork}/>
+          <RecentProject projects={recentWork} />
         </div>
       </section>
 
       <section className="py-10 md:py-14">
         <p className="text-center mb-1 ">Testimonial</p>
         <h2 className="text-3xl lg:text-4xl leading-[1.1] font-bold mb-4 capitalize text-center font-montserrat">
-        What's Our Client Say About Us
-        </h2>  
+          What's Our Client Say About Us
+        </h2>
         <p className="text-foreground-500/80 text-center max-w-[500px] mx-auto text-sm">
-        Hear what our clients say about working with NileAgency — real stories of growth, trust, and success.        </p>
-      <AnimatedTestimonials testimonials={ProjectTestimonials} />
+          Hear what our clients say about working with NileAgency — real stories of growth, trust, and success.        </p>
+        <AnimatedTestimonials testimonials={ProjectTestimonials} />
 
       </section>
 
