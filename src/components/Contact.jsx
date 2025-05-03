@@ -2,6 +2,7 @@
 import { Button } from "./ui/button";
 import { useState } from "react";
 import { toast } from 'sonner';
+import { sendContact } from "@/lib/actions";
 
 
 
@@ -58,35 +59,34 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true)
+    setIsSubmitting(true);
+  
     if (validateForm()) {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      })
-
-      const result = await res.json()
-      if (!result.success) {
-        toast.error('Failed to submit');
+      try {
+        const result = await sendContact(formData);
+  
+        if (!result.success) {
+          toast.error(result.message || 'Submission failed.');
+        } else {
+          toast.success('Message sent!');
+          setFormData({
+            name: "",
+            email: "",
+            phoneNumber: "",
+            subject: "",
+            message: "",
+          });
+        }
+      } catch (error) {
+        toast.error(error.message || 'Unexpected error occurred.');
+      } finally {
         setIsSubmitting(false);
-
-      } 
-      else {
-        toast.success('Message sent!');
-        setIsSubmitting(false)
-        setFormData({
-          name: "",
-          email: "",
-          phoneNumber: "",
-          subject: "",
-          message: "",
-        });        
       }
-
+    } else {
+      setIsSubmitting(false);
     }
-
   };
+  
 
   return (
     <div className="py-10 md:py-14  font-poppins">
