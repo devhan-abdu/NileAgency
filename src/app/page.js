@@ -16,7 +16,7 @@ export default async function Home() {
   const ProjectTestimonials = await fetchProjects(testimonialQuery)
 
   return (
-    <div className="font-poppins text-foreground-500" >
+    <div className="font-poppins text-foreground-500 px-6 max-w-[1160px] mx-auto" >
       <section className="pt-16 pb-8 md:pt-20 md:pb-24 relative overflow-hidden">
         <div className="text-left sm:text-center">
           <p className="mb-1 font-montserrat">10 years of experience!</p>

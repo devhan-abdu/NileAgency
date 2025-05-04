@@ -7,7 +7,6 @@ import Link from "next/link";
 const RecentProject = ({ projects }) => {
     const [hoveredIndex, setHoveredIndex] = useState(null);
     const springConfig = { type: "spring", stiffness: 100, damping: 20 };
-    console.log(projects , 'hanu')
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

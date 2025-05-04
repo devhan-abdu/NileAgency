@@ -24,7 +24,7 @@ if (!project) {
 }
 
     return (
-        <div className='font-poppins text-foreground-500'>
+        <div className='font-poppins text-foreground-500 px-6 max-w-[1160px] mx-auto'>
             <section className="px-2 sm:px-0 pt-16 pb-8 md:pt-24  border-b border-gray-600 shadow-xl rounded-lg">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[1.3] font-bold mb-4 uppercase text-left font-montserrat">
                     {project.clientName}

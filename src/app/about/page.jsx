@@ -9,12 +9,11 @@ import Contact from "@/components/Contact"
 
 const About = () => {
     return (
-        <div className="font-poppins text-foreground-500" >
+        <div className="font-poppins text-foreground-500 px-6 max-w-[1160px] mx-auto" >
             <section className="px-2 sm:px-0 pt-16 pb-12 md:pt-24  ">
                 <div className="text-left md:text-center max-w-[700px] mx-auto ">
-                    <p className="text-xl ">WE ARE</p>
                     <h1 className="text-4xl lg:text-6xl leading-[1.3] font-bold mb-4 capitalize font-montserrat ">
-                        NileAgency Your Digital Partner
+                       WE are NileAgency Your Digital Partner
                     </h1>
                     <p className="mb-6 text-base">Innovative Ecommerce, Marketing, and UI/UX solutions that drive results</p>
                     <Link

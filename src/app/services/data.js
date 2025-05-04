@@ -84,18 +84,6 @@ export const clientLogos = [
   '/opera.svg',
   '/oppo-new.svg',
   '/schibsted.svg',
-  // '/corel.svg',
-  // '/creative-new.svg',
-  // '/nokia.svg',
-  // '/opera.svg',
-  // '/oppo-new.svg',
-  // '/schibsted.svg',
-  // '/corel.svg',
-  // '/creative-new.svg',
-  // '/nokia.svg',
-  // '/opera.svg',
-  // '/oppo-new.svg',
-  // '/schibsted.svg',
   
 ];
 export const solutions = [

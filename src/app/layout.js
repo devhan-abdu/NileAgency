@@ -21,9 +21,6 @@ const poppins = Poppins({
   display: 'swap',
 });
 
-
-
-
 export const metadata = {
   title: "NileAgency",
   description: "Created by devhan",
@@ -34,7 +31,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
 
-       className={`antialiased bg-background-500 px-6 max-w-[1160px] mx-auto ${montserrat.variable} ${poppins.variable}`}
+       className={`antialiased bg-background-500  mx-auto ${montserrat.variable} ${poppins.variable}`}
 
       >
         <Header/>

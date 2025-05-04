@@ -66,7 +66,7 @@ export default function Portfolio({ projects }) {
   }
 
   return (
-    <div className="font-poppins text-foreground-500">
+    <div className="font-poppins text-foreground-500 mx-auto">
      
       <section className="py-10 md:py-14" id="projects">
         <h1 className="text-3xl lg:text-4xl leading-[1.4] font-bold capitalize text-center max-w-[900px] mx-auto mb-10 md:mb-16 font-montserrat">
