@@ -1,14 +1,11 @@
-"use client";;
-import { ArrowLeft , ArrowRight } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
-
+"use client";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
-export const AnimatedTestimonials = ({
-  testimonials,
-  autoplay = false
-}) => {
+export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
   const [active, setActive] = useState(0);
+  const [rotations, setRotations] = useState([]);
 
   const handleNext = () => {
     setActive((prev) => (prev + 1) % testimonials.length);
@@ -18,9 +15,7 @@ export const AnimatedTestimonials = ({
     setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
-  const isActive = (index) => {
-    return index === active;
-  };
+  const isActive = (index) => index === active;
 
   useEffect(() => {
     if (autoplay) {
@@ -29,12 +24,13 @@ export const AnimatedTestimonials = ({
     }
   }, [autoplay]);
 
-  const randomRotateY = () => {
-    return Math.floor(Math.random() * 21) - 10;
-  };
+  useEffect(() => {
+    const generatedRotations = testimonials.map(() => Math.floor(Math.random() * 21) - 10);
+    setRotations(generatedRotations);
+  }, [testimonials]);
+
   return (
-    <div
-      className="mx-auto max-w-sm px-4 py-20  antialiased md:max-w-4xl md:px-8 lg:px-12">
+    <div className="mx-auto max-w-sm px-4 py-20 antialiased md:max-w-4xl md:px-8 lg:px-12">
       <div className="relative grid grid-cols-1 gap-20 md:grid-cols-2">
         <div>
           <div className="relative h-80 w-full">
@@ -42,42 +38,42 @@ export const AnimatedTestimonials = ({
               {testimonials.map((testimonial, index) => (
                 <motion.div
                   key={index}
-
                   initial={{
                     opacity: 0,
                     scale: 0.9,
                     z: -100,
-                    rotate: randomRotateY(),
+                    rotate: rotations[index] || 0,
                   }}
                   animate={{
                     opacity: isActive(index) ? 1 : 0.7,
                     scale: isActive(index) ? 1 : 0.95,
                     z: isActive(index) ? 0 : -100,
-                    rotate: isActive(index) ? 0 : randomRotateY(),
+                    rotate: isActive(index) ? 0 : rotations[index] || 0,
                     zIndex: isActive(index)
                       ? 40
                       : testimonials.length + 2 - index,
-                    y: isActive(index) ? [0, -80, 0] : 0,
+                    y: isActive(index) ? 0 : 0, // avoid animation array for SSR consistency
                   }}
                   exit={{
                     opacity: 0,
                     scale: 0.9,
                     z: 100,
-                    rotate: randomRotateY(),
+                    rotate: rotations[index] || 0,
                   }}
                   transition={{
                     duration: 0.4,
                     ease: "easeInOut",
                   }}
-                  className="absolute inset-0 origin-bottom">
+                  className="absolute inset-0 origin-bottom"
+                >
                   <img
                     src={testimonial.imageUrl}
                     alt={testimonial.ceoName}
-
                     width={500}
                     height={500}
                     draggable={false}
-                    className="h-full w-full rounded-3xl object-cover object-center" />
+                    className="h-full w-full rounded-3xl object-cover object-center"
+                  />
                 </motion.div>
               ))}
             </AnimatePresence>
@@ -86,31 +82,17 @@ export const AnimatedTestimonials = ({
         <div className="flex flex-col justify-between py-4">
           <motion.div
             key={active}
-            initial={{
-              y: 20,
-              opacity: 0,
-            }}
-            animate={{
-              y: 0,
-              opacity: 1,
-            }}
-            exit={{
-              y: -20,
-              opacity: 0,
-            }}
-            transition={{
-              duration: 0.2,
-              ease: "easeInOut",
-            }}>
-            <h3 className="text-2xl font-bold  ">
-              {testimonials[active].ceoName}
-            </h3>
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -20, opacity: 0 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+          >
+            <h3 className="text-2xl font-bold">{testimonials[active].ceoName}</h3>
             <p className="text-sm text-foreground-500/70 capitalize">
-               {testimonials[active].companyName} CEO
+              {testimonials[active].companyName} CEO
             </p>
-            <motion.p className="mt-8 text-lg text-foreground-500/70 ">
+            <motion.p className="mt-8 text-lg text-foreground-500/70">
               {testimonials[active].message.split(" ").map((word, index) => (
-
                 <motion.span
                   key={index}
                   initial={{
@@ -128,7 +110,8 @@ export const AnimatedTestimonials = ({
                     ease: "easeInOut",
                     delay: 0.02 * index,
                   }}
-                  className="inline-block">
+                  className="inline-block"
+                >
                   {word}&nbsp;
                 </motion.span>
               ))}
@@ -137,15 +120,15 @@ export const AnimatedTestimonials = ({
           <div className="flex gap-4 pt-12 md:pt-0">
             <button
               onClick={handlePrev}
-              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800">
-              <ArrowLeft
-                className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:rotate-12 dark:text-neutral-400" />
+              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+            >
+              <ArrowLeft className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:rotate-12 dark:text-neutral-400" />
             </button>
             <button
               onClick={handleNext}
-              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800">
-              <ArrowRight
-                className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400" />
+              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+            >
+              <ArrowRight className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400" />
             </button>
           </div>
         </div>
@@ -153,4 +136,3 @@ export const AnimatedTestimonials = ({
     </div>
   );
 };
-
