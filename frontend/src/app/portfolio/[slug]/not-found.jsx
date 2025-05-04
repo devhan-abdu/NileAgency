@@ -29,7 +29,7 @@ export default function NotFound() {
         <p className='text-5xl font-bold mb-3'>Oops!</p>
         <p className='text-xl font-semibold capitalize mb-12'> We Could not find the requested project</p>
 
-        <p className='text-lg mb-6 '>Let’s go back to the portfolio and explore more</p>
+        <p className='text-lg mb-6 '>Let&apos; go back to the portfolio and explore more</p>
         <Link
           href="/portfolio"
           className="mt-4  bg-primary-500/80 px-4 py-1 rounded-sm text-xl font-bold text-black transition-colors hover:bg-primary-500 font-poppins"

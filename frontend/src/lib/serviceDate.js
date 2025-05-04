@@ -57,7 +57,7 @@ export const services =[
       id:5,
       title:"Content Writing",
       icon:<PenTool className=" text-2xl font-bold"/>,
-      desc:"Delivering captivating, SEO-optimized content for websites, blogs, and ads to engage audiences and strengthen your brand’s voice"
+      desc:"Delivering captivating, SEO-optimized content for websites, blogs, and ads to engage audiences and strengthen your brands voice"
     },
     {
       id:6,

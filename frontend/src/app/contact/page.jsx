@@ -11,7 +11,7 @@ const ContactPage = () => {
                     <h1 className="text-4xl lg:text-6xl leading-[1.3] font-bold mb-4 capitalize font-montserrat">
                     We've got a great feeling about this
                     </h1>
-                    <p className="mb-6 text-foreground-500/80 text-sm md:text-base">Reach out today to discuss your project. Our team is ready to collaborate and create innovative solutions tailored to your business needs. Let’s work together!.</p>
+                    <p className="mb-6 text-foreground-500/80 text-sm md:text-base">Reach out today to discuss your project. Our team is ready to collaborate and create innovative solutions tailored to your business needs. Let&apos; work together!.</p>
                     <Link
                         href="#service"
                         className={cn(

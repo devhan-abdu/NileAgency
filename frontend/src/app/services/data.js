@@ -30,7 +30,7 @@ export const services = [
     icon: <Megaphone size={30} color="#bafd02" />,
     title: 'Digital Marketing',
     description:
-      'Our data-driven digital marketing strategies amplify your brand’s reach. Through SEO, social media, and PPC campaigns, we grow your audience, increase conversions, and maximize ROI with measurable, tailored solutions.',
+      'Our data-driven digital marketing strategies amplify your brands; reach. Through SEO, social media, and PPC campaigns, we grow your audience, increase conversions, and maximize ROI with measurable, tailored solutions.',
     features: ['SEO Audits', 'Social Media Management', 'PPC Campaigns', 'Analytics'],
     media: '/market2.png',
   },
@@ -38,7 +38,7 @@ export const services = [
     icon: <PenTool size={40}  />,
     title: 'Content Writing',
     description:
-      'We deliver compelling, SEO-optimized content for websites, blogs, and ads. Our storytelling strengthens your brand’s voice, engages audiences, and drives traffic, ensuring your message resonates and converts.',
+      'We deliver compelling, SEO-optimized content for websites, blogs, and ads. Our storytelling strengthens your brands voice, engages audiences, and drives traffic, ensuring your message resonates and converts.',
     features: ['Blog Posts', 'Ad Copy', 'Whitepapers', 'SEO Optimization'],
     media: '/content2.jpg',
   },

@@ -3,27 +3,29 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from 'next/image';
+import { useCallback } from "react";
+
 
 export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
   const [active, setActive] = useState(0);
   const [rotations, setRotations] = useState([]);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setActive((prev) => (prev + 1) % testimonials.length);
-  };
+  }, [testimonials.length]);
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
+  }, [testimonials.length]);
 
   const isActive = (index) => index === active;
 
   useEffect(() => {
     if (autoplay) {
-      const interval = setInterval(handleNext, 5000);
+      const interval = setInterval(() => handleNext(), 5000);
       return () => clearInterval(interval);
     }
-  }, [autoplay]);
+  }, [autoplay, handleNext]);
 
   useEffect(() => {
     const generatedRotations = testimonials.map(() => Math.floor(Math.random() * 21) - 10);

@@ -176,7 +176,7 @@ export default async function Home() {
           Our Success Stories
         </h2>
         <p className="text-foreground-500/80 text-center max-w-[500px] mx-auto text-sm">
-          Real projects, real results — see how we've created lasting impact and measurable growth for our clients.
+          Real projects, real results — see how we&apos;ve created lasting impact and measurable growth for our clients.
         </p>
         <div className="flex items-center justify-center mt-12 md:mt-20">
 
@@ -187,7 +187,7 @@ export default async function Home() {
       <section className="py-10 md:py-14">
         <p className="text-center mb-1 ">Testimonial</p>
         <h2 className="text-3xl lg:text-4xl leading-[1.1] font-bold mb-4 capitalize text-center font-montserrat">
-          What's Our Client Say About Us
+          What&apos;s Our Client Say About Us
         </h2>
         <p className="text-foreground-500/80 text-center max-w-[500px] mx-auto text-sm">
           Hear what our clients say about working with NileAgency — real stories of growth, trust, and success.        </p>

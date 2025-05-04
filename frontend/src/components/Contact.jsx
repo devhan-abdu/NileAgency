@@ -95,7 +95,7 @@ const Contact = () => {
         GET IN TOUCH WITH US
       </h2>
       <p className="text-foreground-500/80 text-center max-w-[500px] mx-auto text-sm">
-        Every great partnership begins with a conversation — let’s connect and build something exceptional together
+        Every great partnership begins with a conversation — let&apos; connect and build something exceptional together
       </p>
       <div className="flex flex-col md:flex-row place-content-center items-start gap-12  mt-12 md:mt-20">
         <form action="" className=" flex flex-col gap-6 md:w-1/2 w-full" onSubmit={handleSubmit}>
