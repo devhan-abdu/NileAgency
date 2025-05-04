@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from 'next/image';
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import Contact from "@/components/Contact";
@@ -65,10 +66,12 @@ const Service = () => {
                 </Link>
               </div>
               <div className="md:w-1/2 w-full relative  ">
-                  <img
+                  <Image
                     src={service.media}
                     alt={`${service.title} team`}
-                    className="rounded-lg shadow-lg  object-cover max-w-md w-full h-[330px] relative "
+                    className="rounded-lg shadow-lg object-cover max-w-md w-full h-[330px] relative"
+                    width={400}
+                    height={330}
                     loading="lazy"
                   />
               </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { services, whyChooseUs } from "@/lib/serviceDate";
 import RecentProject from "@/components/RecentProject";
@@ -75,12 +76,28 @@ export default async function Home() {
           <div className="overflow-hidden whitespace-nowrap relative w-full">
             <div className="flex mx-auto w-max space-x-16 animate-scroll">
               {
-                clientLogos.map((item , idx) => (
-                  <img key={`logo1-${idx}`} src={item} className="mx-8 w-24 lg:w-32 h-auto inline-block" />                ))
+                clientLogos.map((item, idx) => (
+                  <Image
+                    key={`logo1-${idx}`}
+                    src={item}
+                    alt={`Client logo ${idx + 1}`}
+                    className="mx-8 w-24 lg:w-32 h-auto inline-block"
+                    width={128}
+                    height={128}
+                  />
+                ))
               }
-               {
-                clientLogos.map((item , idx) => (
-                  <img key={`logo2-${idx}`} src={item} className="mx-8 w-24 lg:w-32 h-auto inline-block" />                ))
+              {
+                clientLogos.map((item, idx) => (
+                  <Image
+                    key={`logo2-${idx}`}
+                    src={item}
+                    alt={`Client logo ${idx + 1}`}
+                    className="mx-8 w-24 lg:w-32 h-auto inline-block"
+                    width={128}
+                    height={128}
+                  />
+                ))
               }
             </div>          
           </div>
@@ -129,10 +146,12 @@ export default async function Home() {
         <div className="mt-12 md:mt-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-6 items-center justify-center">
             <div className=" ">
-              <img
+              <Image
                 src={'/about.jpg'}
-                alt={`team`}
-                className={cn('rounded-xl shadow-lg  object-cover w-full  ')}
+                alt="About our team"
+                className={cn('rounded-xl shadow-lg object-cover w-full')}
+                width={800}
+                height={600}
                 loading="lazy"
               />
             </div>

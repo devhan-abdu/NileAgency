@@ -2,6 +2,7 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import Image from 'next/image';
 
 export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
   const [active, setActive] = useState(0);
@@ -66,7 +67,7 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
                   }}
                   className="absolute inset-0 origin-bottom"
                 >
-                  <img
+                  <Image
                     src={testimonial.imageUrl}
                     alt={testimonial.ceoName}
                     width={500}

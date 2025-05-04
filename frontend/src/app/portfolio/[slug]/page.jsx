@@ -87,12 +87,17 @@ if (!project) {
                     <Quote className='mb-4'/>
                     <p className=''>{project.testimonial.message}</p>
                     <div className="flex  gap-2 p-8 flex-row items-center sm:gap-6 sm:py-4 ...">
-                    <img className="mx-auto block w-16 h-16 rounded-full object-cover object-center" src={urlFor(project.testimonial.image ).url()} alt="" />  
-                                              <div className="space-y-0.5">
-                                <p className="text-lg font-semibold ">{project.testimonial.ceoName}</p>
-                                <p className="font-medium capitalize">{project.testimonial.companyName} CEO</p>
-
-                            </div>
+                        <Image
+                          className="mx-auto block w-16 h-16 rounded-full object-cover object-center"
+                          src={urlFor(project.testimonial.image).url()}
+                          alt={`${project.testimonial.ceoName} - ${project.testimonial.companyName} CEO`}
+                          width={64}
+                          height={64}
+                        />  
+                        <div className="space-y-0.5">
+                            <p className="text-lg font-semibold ">{project.testimonial.ceoName}</p>
+                            <p className="font-medium capitalize">{project.testimonial.companyName} CEO</p>
+                        </div>
                     </div>
                 </div>
             </section>

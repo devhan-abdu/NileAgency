@@ -66,8 +66,8 @@ const About = () => {
                         {
                             solutions.map((item, index) => (
                                 <div key={index} className={cn("serviceCard w-[300px] h-[230px] px-4 py-5 rounded-lg border-[1.5px] border-white/20 transform cursor-pointer transition duration-300 ")} >
-                                    <h3 class="text-2xl  font-bold mb-4 text-center font-montserrat">{item.title}</h3>
-                                    <ul class="list-disc pl-5 space-y-2 text-sm">
+                                    <h3 className="text-2xl  font-bold mb-4 text-center font-montserrat">{item.title}</h3>
+                                    <ul className="list-disc pl-5 space-y-2 text-sm">
                                         {
                                             item.description.map((desc, index) => (
                                                 <li key={index}>{desc}</li>
@@ -93,10 +93,12 @@ const About = () => {
                 <div className="mt-12 md:mt-20">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-6 items-center justify-center">
                         <div className=" ">
-                            <img
+                            <Image
                                 src={'/about.jpg'}
-                                alt={`team`}
-                                className={cn('rounded-xl shadow-lg  object-cover w-full  ')}
+                                alt="About our team"
+                                className={cn('rounded-xl shadow-lg object-cover w-full')}
+                                width={800}
+                                height={600}
                                 loading="lazy"
                             />
                         </div>
