@@ -2,14 +2,13 @@ import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
-import { solutions } from "../services/data"
-import { whyChooseUs } from "@/lib/serviceDate"
+import { whyChooseUs , aboutSolutions } from "@/lib/data"
 import Contact from "@/components/Contact"
 
 
 const About = () => {
     return (
-        <div className="font-poppins text-foreground-500 px-6 max-w-[1160px] mx-auto" >
+        <div className="font-poppins text-foreground-500 px-6  max-w-[1260px] mx-auto" >
             <section className="px-2 sm:px-0 pt-16 pb-12 md:pt-24  ">
                 <div className="text-left md:text-center max-w-[700px] mx-auto ">
                     <h1 className="text-4xl lg:text-6xl leading-[1.3] font-bold mb-4 capitalize font-montserrat ">
@@ -38,7 +37,7 @@ const About = () => {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-12 ">
                     <div className="w-full sm:w-1/2">
                         <Image
-                            src={'/about.jpg'}
+                            src={'/about/about2.jpg'}
                             alt={`team`}
                             width={400}
                             height={400}
@@ -64,7 +63,7 @@ const About = () => {
                 <div className="flex items-center justify-center mt-12 md:mt-16">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {
-                            solutions.map((item, index) => (
+                            aboutSolutions.map((item, index) => (
                                 <div key={index} className={cn("serviceCard w-[300px] h-[230px] px-4 py-5 rounded-lg border-[1.5px] border-white/20 transform cursor-pointer transition duration-300 ")} >
                                     <h3 className="text-2xl  font-bold mb-4 text-center font-montserrat">{item.title}</h3>
                                     <ul className="list-disc pl-5 space-y-2 text-sm">

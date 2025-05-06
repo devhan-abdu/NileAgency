@@ -1,23 +1,22 @@
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { services, whyChooseUs } from "@/lib/serviceDate";
+import { homeServices, whyChooseUs } from "@/lib/data";
 import RecentProject from "@/components/RecentProject";
-import { client } from "@/lib/sanity";
 import { AnimatedTestimonials } from "@/components/ui/AnimatedTestimonials";
 import { buttonVariants } from "@/components/ui/button";
 import Contact from "@/components/Contact";
 import { fetchProjects } from "@/lib/sanity";
 import { testimonialQuery } from "@/lib/queries";
-import { clientLogos } from "./services/data";
 import { getRecentProjectsQuery } from "@/lib/queries";
+import {Partner} from "@/components/Partner";
 
 export default async function Home() {
   const recentWork = await fetchProjects(getRecentProjectsQuery)
   const ProjectTestimonials = await fetchProjects(testimonialQuery)
 
   return (
-    <div className="font-poppins text-foreground-500 px-6 max-w-[1160px] mx-auto" >
+    <div className="font-poppins text-foreground-500 px-6  max-w-[1260px] mx-auto" >
       <section className="pt-16 pb-8 md:pt-20 md:pb-24 relative overflow-hidden">
         <div className="text-left sm:text-center">
           <p className="mb-1 font-montserrat">10 years of experience!</p>
@@ -67,41 +66,7 @@ export default async function Home() {
             fill="none"
           />
         </svg>
-        <div className="space-y-12">
-          <div className='flex items-center justify-center gap-4 max-w-[500px] mx-auto'>
-            <hr className='grow hidden sm:block' />
-            <p className='font-bold sm:text-xl text-lg '>Trusted By Amazing Brand</p>
-            <hr className='grow hidden sm:block' />
-          </div>
-          <div className="overflow-hidden whitespace-nowrap relative w-full">
-            <div className="flex mx-auto w-max space-x-16 animate-scroll">
-              {
-                clientLogos.map((item, idx) => (
-                  <Image
-                    key={`logo1-${idx}`}
-                    src={item}
-                    alt={`Client logo ${idx + 1}`}
-                    className="mx-8 w-24 lg:w-32 h-auto inline-block"
-                    width={128}
-                    height={128}
-                  />
-                ))
-              }
-              {
-                clientLogos.map((item, idx) => (
-                  <Image
-                    key={`logo2-${idx}`}
-                    src={item}
-                    alt={`Client logo ${idx + 1}`}
-                    className="mx-8 w-24 lg:w-32 h-auto inline-block"
-                    width={128}
-                    height={128}
-                  />
-                ))
-              }
-            </div>          
-          </div>
-          </div>
+        <Partner/>
       </section>
 
 
@@ -116,7 +81,7 @@ export default async function Home() {
         <div className="flex items-center justify-center mt-12 md:mt-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {
-              services.map((item) => (
+              homeServices.map((item) => (
                 <div key={item.id} className={cn("serviceCard w-[330px] h-[200px] px-4 py-5 rounded-lg border-[1.5px] border-white/20 transform cursor-pointer transition duration-300 ")} >
                   <div className="space-y-3 ">
                     {item.icon}
@@ -147,7 +112,7 @@ export default async function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-6 items-center justify-center">
             <div className=" ">
               <Image
-                src={'/about.jpg'}
+                src={'/about/about.jpg'}
                 alt="About our team"
                 className={cn('rounded-xl shadow-lg object-cover w-full')}
                 width={800}

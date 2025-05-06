@@ -1,4 +1,5 @@
-import {Layout ,Code ,Smartphone ,Megaphone ,PenTool, ShoppingCart,Briefcase,User,Clock ,TrendingUp } from 'lucide-react'
+import {Layout ,Code ,Smartphone ,Megaphone ,PenTool, ShoppingCart,Briefcase,User,Clock ,TrendingUp ,Search, Brush, CheckCircle } from 'lucide-react'
+
 
 export const whyChooseUs = [
   {
@@ -28,7 +29,7 @@ export const whyChooseUs = [
   },
 ]
 
-export const services =[
+export const homeServices =[
     {
       id:1,
       title:"UI/UX Design",
@@ -67,141 +68,113 @@ export const services =[
     }
   ]
 
-export const recentProject = [
-  {                                                         
-    id: 1,
-    name: "SaaS Dashboard UI",
-    desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
-    img: "/work1.png",
-    icon: <Layout className="text-2xl font-bold text-primary-500" />,
+
+
+
+export const services = [
+  {
+    icon: <Layout size={30}  />,
+    title: 'UI/UX Design',
+    description:
+      'We craft intuitive, visually stunning interfaces that prioritize user satisfaction. Our research-driven UI/UX design process ensures seamless navigation, engaging interactions, and tailored experiences, boosting retention and conversions for your digital products.',
+    features: ['Wireframing', 'Prototyping', 'User Testing', 'Accessibility Compliance'],
+    media: '/serviceImage/ui.png',
   },
   {
-    id: 2,
-    name: "SaaS Dashboard UI",
-    desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
-    img: "/work2.png",
-    icon: <Layout className="text-2xl font-bold text-primary-500" />,
+    icon: <Code size={30}  />,
+    title: 'Web Development',
+    description:
+      'We build fast, secure, and responsive websites and web applications using cutting-edge technologies. Our custom solutions empower your brand, streamline operations, and drive measurable business growth in a competitive digital landscape.',
+    features: ['Responsive Design', 'CMS Integration', 'API Development', 'Performance Optimization'],
+    media: '/serviceImage/web.png',
   },
   {
-    id: 3,
-    name: "SaaS Dashboard UI",
-    desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
-    img: "/work3.png",
-    icon: <Layout className="text-2xl font-bold text-primary-500" />,
+    icon: <Smartphone size={30}  />,
+    title: 'App Development',
+    description:
+      'We create high-performance iOS and Android apps with exceptional functionality and user-focused design. From startups to enterprises, our innovative mobile solutions transform your vision into reality, ensuring scalability and engagement.',
+    features: ['Native/Hybrid Apps', 'UI/UX Integration', 'App Store Deployment'],
+    media: '/serviceImage/appteam.jpg',
   },
   {
-    id: 4,
-    name: "SaaS Dashboard UI",
-    desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
-    img: "/work4.png",
-    icon: <Layout className="text-2xl font-bold text-primary-500" />,
-  },
-  {                                                         
-    id: 5,
-    name: "SaaS Dashboard UI",
-    desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
-    img: "/work1.png",
-    icon: <Layout className="text-2xl font-bold text-primary-500" />,
+    icon: <Megaphone size={30} color="#bafd02" />,
+    title: 'Digital Marketing',
+    description:
+      'Our data-driven digital marketing strategies amplify your brands; reach. Through SEO, social media, and PPC campaigns, we grow your audience, increase conversions, and maximize ROI with measurable, tailored solutions.',
+    features: ['SEO Audits', 'Social Media Management', 'PPC Campaigns', 'Analytics'],
+    media: '/serviceImage/market2.png',
   },
   {
-    id: 6,
-    name: "SaaS Dashboard UI",
-    desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
-    img: "/work2.png",
-    icon: <Layout className="text-2xl font-bold text-primary-500" />,
+    icon: <PenTool size={40}  />,
+    title: 'Content Writing',
+    description:
+      'We deliver compelling, SEO-optimized content for websites, blogs, and ads. Our storytelling strengthens your brands voice, engages audiences, and drives traffic, ensuring your message resonates and converts.',
+    features: ['Blog Posts', 'Ad Copy', 'Whitepapers', 'SEO Optimization'],
+    media: '/serviceImage/content2.jpg',
   },
   {
-    id: 7,
-    name: "SaaS Dashboard UI",
-    desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
-    img: "/work3.png",
-    icon: <Layout className="text-2xl font-bold text-primary-500" />,
-  },
-  {
-    id: 8,
-    name: "SaaS Dashboard UI",
-    desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
-    img: "/work4.png",
-    icon: <Layout className="text-2xl font-bold text-primary-500" />,
-  },
-  {                                                         
-    id: 9,
-    name: "SaaS Dashboard UI",
-    desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
-    img: "/work1.png",
-    icon: <Layout className="text-2xl font-bold text-primary-500" />,
-  },
-  {
-    id: 10,
-    name: "SaaS Dashboard UI",
-    desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
-    img: "/work2.png",
-    icon: <Layout className="text-2xl font-bold text-primary-500" />,
-  },
-  {
-    id: 11,
-    name: "SaaS Dashboard UI",
-    desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
-    img: "/work3.png",
-    icon: <Layout className="text-2xl font-bold text-primary-500" />,
-  },
-  {
-    id: 12,
-    name: "SaaS Dashboard UI",
-    desc: "Designed and developed a sleek, user-friendly SaaS dashboard, enhancing data visualization and workflow efficiency for a tech startup.",
-    img: "/work4.png",
-    icon: <Layout className="text-2xl font-bold text-primary-500" />,
-  },
- 
-];
-export const testimonials = [
-  {
-    quote:
-      "NileAgency's innovative solutions have elevated our brand to new heights. Their attention to detail is unmatched.",
-    name: "Hanan Abdu",
-    designation: "CEO at NileAgency",
-    src: "/profile.jpg",
-  },
-  {
-    quote:
-      "The team at NileAgency delivered beyond our expectations. Their creativity and professionalism are top-notch.",
-    name: "Ahmed Yassin",
-    designation: "Marketing Manager at EthioTech",
-    src: "/work1.png",
-  },
-  {
-    quote:
-      "Working with NileAgency has been a game-changer for our business. Their strategies are both effective and innovative.",
-    name: "Sara Mekonnen",
-    designation: "Operations Head at Addis Solutions",
-    src: "/work2.png",
-  },
-  {
-    quote:
-      "NileAgency's expertise in web development and branding has set us apart from our competitors.",
-    name: "Daniel Kebede",
-    designation: "Founder at Blue Nile Ventures",
-    src: "/work3.png",
-  },
-  {
-    quote:
-      "Their dedication and passion for delivering quality work are evident in every project they undertake.",
-    name: "Liya Tadesse",
-    designation: "Creative Director at Visionary Designs",
-    src: "/work4.png",
-  },
-  {
-    quote:
-      "NileAgency's team is incredibly talented and dedicated. They brought our vision to life with precision and creativity.",
-    name: "Samuel Getachew",
-    designation: "CEO at AddisTech",
-    src: "/work5.png",
-  },
-  {
-    quote:
-      "Their ability to understand our needs and deliver exceptional results is truly commendable. Highly recommended!",
-    name: "Martha Alemu",
-    designation: "Founder at Green Solutions",
-    src: "/work6.png",
+    icon: <ShoppingCart size={30}  />,
+    title: 'E-commerce',
+    description:
+      'We launch scalable online stores with seamless development, secure payment integration, and optimized UX. Our e-commerce solutions empower your business to thrive in the competitive digital marketplace.',
+    features: ['Shopify/WooCommerce', 'Payment Gateways', 'Inventory Management'],
+    media: '/serviceImage/eccomerce.jpg',
   },
 ];
+
+export const strategySteps = [
+  {
+    icon: <Search size={32}  />,
+    title: 'Market Research',
+    description: 'We analyze your industry, audience, and competitors to create effective strategies.',
+  },
+  {
+    icon: <Brush size={32}  />,
+    title: 'Design & Development',
+    description: 'Our team designs and develops tailored solutions using cutting-edge technology.',
+  },
+  {
+    icon: <CheckCircle size={32}  />,
+    title: 'Quality Assurance',
+    description: 'We rigorously test and refine to deliver flawless, high-quality results every time.',
+  },
+];
+
+export const aboutSolutions = [
+  {
+    title: "Design and UX",
+    description: [
+      "UI/UX Design",
+      "User-Centric Experiences",
+      "Tools: Figma, Adobe XD, Sketch",
+    ],
+  },
+  {
+    title: "Development",
+    description: [
+      "Web Development",
+      "App Development",
+      "Ecommerce Solutions",
+      "Technologies: React, Flutter, Shopify, WordPress",
+    ],
+  },
+  {
+    title: "Digital Marketing",
+    description: [
+      "Digital Marketing",
+      "Engagement & Growth",
+      "Tools: Google Analytics, SEMrush, HubSpot",
+    ],
+  },
+  {
+    title: "Content Writing",
+    description: [
+      "Content Writing",
+      "SEO-Optimized Content",
+      "Tools: Grammarly, Yoast SEO, Google Docs",
+    ],
+  },
+];
+
+
+   

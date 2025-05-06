@@ -3,13 +3,14 @@ import Image from 'next/image';
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import Contact from "@/components/Contact";
-import { clientLogos, strategySteps, services } from './data'
+import { strategySteps , services } from "@/lib/data";
+import { Partner } from "@/components/Partner";
 
 
 
 const Service = () => {
   return (
-    <div className="font-poppins text-foreground-500 px-6 max-w-[1160px] mx-auto" >
+    <div className="font-poppins text-foreground-500 px-6  max-w-[1260px] mx-auto" >
       <section className="px-2 sm:px-0 pt-16 pb-8 md:pt-24  ">
         <div className="text-left md:text-center max-w-[700px] mx-auto ">
           <h1 className="text-4xl lg:text-6xl leading-[1.3] font-bold mb-4 capitalize font-montserrat">
@@ -80,6 +81,10 @@ const Service = () => {
           ))}
         </div>
       </section>
+      <section className="py-12">
+      <Partner/>
+      </section>
+      
       <section className="py-10 md:py-14 ">
       <p className="text-center mb-1 font-montserrat">Strategy</p>
        

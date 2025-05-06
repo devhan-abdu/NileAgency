@@ -54,9 +54,10 @@ const Footer = () => {
   };
 
   return (
-    <div className="text-gray-300 font-poppins pt-12 pb-6 px-8 md:px-12 border-t border-gray-400 rounded-md mt-16 ">
-      <div className="flex flex-col md:flex-row gap-12">
-        <div className="w-full md:w-[25%] flex flex-col justify-between gap-6">
+    <footer className="text-gray-300 font-poppins pt-20 pb-6 px-8 md:px-12   mt-16 bg-[#202020] ">
+      <div className="flex flex-col items-center justify-center max-w-[1200px] mx-auto">
+      <div className="flex flex-col md:flex-row gap-12 place-content-center">
+        <div className="w-full md:w-[25%]  flex flex-col justify-between gap-6">
           <div>
             <h1 className="text-3xl font-bold font-montserrat uppercase text-foreground-500">NileAgency</h1>
             <p className="text-[14px]">Design. Strategy. Results.</p>
@@ -79,7 +80,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="w-full md:w-[40%] flex flex-col justify-between gap-6">
+        <div className="w-full md:w-[40%]  flex flex-col justify-between gap-6">
           <ul className="flex flex-wrap gap-4">{<NavMap />}</ul>
           <div>
             <h3 className="text-xl font-bold">About Us</h3>
@@ -103,7 +104,7 @@ const Footer = () => {
               <p className="ml-4 text-[14px] text-foreground-500/90">nileagencyhan@gmail.com</p>
             </div>
           </div>
-          <div className="inline-flex  w-max mr-auto border border-foreground-500 focus-within:border-primary-500 text-white rounded-full transition">
+          <div className="inline-flex   mr-auto border border-foreground-500 focus-within:border-primary-500 text-white rounded-full transition">
             <input
               type="text"
               className="outline-none px-2 py-2 bg-transparent text-white"
@@ -115,11 +116,12 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
-      <div className="text-center mt-6  text-foreground-500">
+     
+      <div className="text-center mt-10  text-foreground-500">
         Copyright &copy; {year && <span>{year}</span>}<span className="font-bold"> NileAgency</span>
       </div>
-    </div>
+      </div>
+    </footer>
   );
 };
 

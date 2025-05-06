@@ -40,7 +40,7 @@ const Header = () => {
     }
     return (
 
-        <header className='flex items-center justify-between font-poppins  text-foreground-500 px-10 max-w-[1160px] mx-auto py-8 font-poppins'>
+        <header className='flex items-center justify-between font-poppins  text-foreground-500 px-10  max-w-[1260px] mx-auto py-8 font-poppins'>
             <FloatingNav navItems={navLinks} />
             <div className="flex justify-between items-center place-content-center gap-4 w-full">
                 <Link href={'/'} className="text-primary-500 text-3xl font-semibold inline-block font-serif">
