@@ -104,16 +104,6 @@ const Footer = () => {
               <p className="ml-4 text-[14px] text-foreground-500/90">nileagencyhan@gmail.com</p>
             </div>
           </div>
-          <div className="inline-flex   mr-auto border border-foreground-500 focus-within:border-primary-500 text-white rounded-full transition">
-            <input
-              type="text"
-              className="outline-none px-2 py-2 bg-transparent text-white"
-              placeholder="Enter email"
-            />
-            <button className="text-black bg-primary-500 rounded-r-full px-3 font-bold cursor-pointer">
-              Subscribe
-            </button>
-          </div>
         </div>
       </div>
      
