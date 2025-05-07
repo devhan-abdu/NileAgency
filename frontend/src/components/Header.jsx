@@ -7,6 +7,8 @@ import {
     Sheet,
     SheetContent,
     SheetTrigger,
+    SheetTitle,
+    SheetHeader
 } from "@/components/ui/sheet"
 import { FloatingNav } from "./ui/FloatedNav";
 
@@ -36,7 +38,7 @@ const Header = () => {
                     </li>
                 )
             })
-       )
+        )
     }
     return (
 
@@ -65,7 +67,10 @@ const Header = () => {
                 <SheetTrigger className='ml-auto md:hidden'>
                     <CgMenuLeft className='text-primary-500 text-3xl' />
                 </SheetTrigger>
-                <SheetContent className='w-[250px] bg-black/90 shadow-md shadow-foreground-500 px-12 py-28'>
+                <SheetContent className='w-[250px] bg-black/90 shadow-md shadow-foreground-500 px-12 py-16'>
+                    <SheetHeader>
+                        <SheetTitle className='text-primary-500 text-2xl font-semibold inline-block font-serif'>NileAgency</SheetTitle>
+                    </SheetHeader>
                     <nav>
                         <ul className='flex flex-col justify-between gap-6 text-foreground-500'>
                             {
