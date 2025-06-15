@@ -93,7 +93,7 @@ const About = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-6 items-center justify-center">
                         <div className=" ">
                             <Image
-                                src={'/about.jpg'}
+                                src={'/about/about.jpg'}
                                 alt="About our team"
                                 className={cn('rounded-xl shadow-lg object-cover w-full')}
                                 width={800}
